@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col,Card} from 'reactstrap';
+import {Col,Card,CardHeader,CardBody} from 'reactstrap';
 
 const Members = (props) =>{
     console.log(props.members)
@@ -7,8 +7,11 @@ const Members = (props) =>{
         <div>
             {props.members.map(member=>{
                 return <Col sm="5">
-                    <Card>
-                    {member.name}
+                    <Card body inverse style={{ backgroundColor: 'green', borderColor: '#333', fontWeight:'bolder' }}>
+                    <CardHeader>{member.name}</CardHeader>
+                    <CardBody color="primary">
+                        {member.email}<br/>{member.role}
+                    </CardBody>
                     </Card>
                 </Col>
             })}
